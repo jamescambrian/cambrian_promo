@@ -1,0 +1,25 @@
+
+/* Typography Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Fonts */
+
+// font stacks
+$fontLight: CorpidLight, sans-serif; 
+$fontNormal: Corpid, sans-serif;
+$fontBold: CorpidBold, sans-serif; 
+$fontHeavy: CorpidHeavy, sans-serif; 
+
+// Body
+$body-font              : $fontNormal;
+$body-font-weight       : normal !default;
+$body-font-color        : $midnightBlue50;
+
+// Headings
+$header-font            : $fontNormal;
+$header-font-weight     : normal !default;
+$header-line-height     : normal !default;
+$header-font-color      : $midnightBlue50;
+
+// Misc
+$label-font-weight      : 700 !default;

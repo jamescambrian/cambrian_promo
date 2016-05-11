@@ -1,0 +1,52 @@
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $header-font;
+  font-weight: $header-font-weight;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 5.0rem;
+  line-height: $header-line-height;
+}
+
+h2 {
+  font-size: 3.6rem;
+  line-height: $header-line-height;
+}
+
+h3 {
+  font-size: 3.0rem;
+  line-height: $header-line-height;
+}
+
+h4 {
+  font-size: 2.4rem;
+  ine-height: $header-line-height;
+}
+
+h5 {
+  font-size: 1.8rem;
+  line-height: $header-line-height;
+}
+
+h6 {
+  font-size: 1.5rem;
+  line-height: $header-line-height;
+}
+
+
+
+
+
+
+

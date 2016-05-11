@@ -1,0 +1,140 @@
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+* {
+  @include box-sizing(border-box);
+}
+
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout Skeleton
+are based on 10px sizing. So basically 1.5rem = 15px :) */
+
+html {
+  font-size: 62.5%;
+  -ms-overflow-style: scrollbar;
+}
+
+body {
+  background-color: $white;
+  color: $midnightBlue100;
+  font-family: $fontNormal;
+  // currently ems cause chrome bug misinterpreting rems on body element
+  font-size: 1.6rem;
+  font-weight: $body-font-weight;
+  line-height: 1.6;
+  // -webkit-font-smoothing: antialiased;
+        
+  @media (#{$bp-larger-than-phablet}) {
+    font-size: 1.5rem;  
+    line-height: 1.5;
+  }
+}
+
+// Links
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: lighten($link-color, 15%);
+    cursor: pointer;
+    text-decoration: none; 
+  }
+}
+
+// Bolded text
+
+strong,
+b {
+  font-family: $fontBold;
+  font-weight: 700;
+}
+
+// Lists
+
+ol,
+ul {
+  margin-top: 0;
+  padding-left: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+ol {
+  list-style: decimal inside;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  font-size: 90%;
+  margin: 1.5*$base-spacing 0 1.5*$base-spacing 3*$base-spacing;
+}
+
+li {
+  margin-bottom: $base-spacing;
+}
+
+// Code
+
+code {
+  background: lighten($light-grey, 6.4%);
+  border: 1px solid $light-grey;
+  border-radius: $base-radius;
+  font-size: 90%;
+  margin: 0 0.2rem;
+  padding: 0.2rem 0.5rem;
+  white-space: nowrap;
+}
+
+pre > code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre;
+}
+
+// Hr
+
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  border-top: 1px solid $light-grey;
+}
+
+// Tables
+
+th,
+td {
+  border-bottom: 1px solid $light-grey;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+th:first-child,
+td:first-child {
+  padding-left: 0;
+}
+
+th:last-child,
+td:last-child {
+  padding-right: 0;
+}
+
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol {
+  margin-bottom: 2.5*$base-spacing;
+}
+
+p {
+  margin-top: 0;
+}

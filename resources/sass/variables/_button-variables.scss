@@ -1,0 +1,82 @@
+
+/* Button Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+$btn-font: $fontBold;
+$btn-font-weight: normal;
+$btn-font-size: 1.8rem !default;
+$btn-font-size-desktop: 1.6rem !default;
+$btn-width: 136px !default;
+$btn-height: 55px !default;
+$btn-height-desktop: 40px !default;
+
+// Basic
+$btn: (
+  color                 : $secondary-color-mblue,
+  bg                    : $secondary-color-grey,
+  border                : $secondary-color-grey,
+  hover: (
+    color               : $dark-grey,
+    bg                  : $ctaGreySecondary,
+    border              : $ctaGreySecondary
+  )
+);
+
+// Primary
+$btn-primary: (
+  color                 : #fff,
+  bg                    : $primary-color,
+  border                : $primary-color,
+  hover: (
+    color               : #fff,
+    bg                  : $link-color,
+    border              : $link-color
+  )
+);
+
+// CTA
+$btn-cta: (
+  color                 : $white,
+  bg                    : $blackBean100,
+  border                : $blackBean100,
+  hover: (
+    color               : $white,
+    bg                  : $blackBeanDark,
+    border              : $blackBeanDark
+  )
+);
+
+// Confirm
+$btn-confirm: (
+  color                 : $midnightBlue100,
+  bg                    : $sunglow100,
+  border                : $sunglow100,
+  hover: (
+    color               : $midnightBlue100,
+    bg                  : #FEAA01,
+    border              : #FEAA01
+  )
+);
+
+// Option
+$btn-option: (
+  color                 : #fff,
+  bg                    : $ctaOrange,
+  border                : $ctaOrange,
+  hover: (
+    color               : #fff,
+    bg                  : $ctaOrangeSecondary,
+    border              : $ctaOrangeSecondary
+  )
+);
+
+// Delete
+$btn-delete: (
+  color                 : #fff,
+  bg                    : $ctaRed,
+  border                : $ctaRed,
+  hover: (
+    color               : #fff,
+    bg                  : $ctaRedSecondary,
+    border              : $ctaRedSecondary
+  )
+);

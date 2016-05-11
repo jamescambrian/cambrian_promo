@@ -1,0 +1,100 @@
+
+/* Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Base styling shared by inputs too */
+@mixin btn-base() {
+  font-family: $btn-font;
+  font-weight: $btn-font-weight;
+  display: inline-block; 
+  min-width: $btn-width;
+  min-height: $btn-height;
+  line-height: 1.2;
+  padding: 18.5px 20px;
+  text-align: center;
+  font-size: $btn-font-size;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  border-radius: $base-radius;
+  @include transition (all 0.3s ease);
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    cursor: pointer;
+  }
+        
+  @media (#{$bp-larger-than-phablet}) {
+    min-height: $btn-height-desktop;
+    font-size: $btn-font-size-desktop;
+    padding: 12px 20px;
+  }
+}
+
+/* Input buttons */
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  @include btn-base;
+  // Note: No margin is set here.
+  // The margin is set on the input
+  // elements in _form.scss
+  
+  &:disabled {
+    cursor:not-allowed;
+    opacity: 0.7;
+    @include transition (none);      
+    
+    &:hover {
+      color: $secondary-color-mblue;
+      background: $secondary-color-grey;
+    }
+  }
+}
+
+button {
+  @include btn-base;
+  margin-bottom: $base-spacing;
+}
+
+/* Button Generator */
+@mixin btn-gen($btn-info) {
+  @include btn-base;
+  background: map-get($btn-info, bg);
+  color: map-get($btn-info, color);
+  border: 1px solid map-get($btn-info, border);
+
+  &:hover,
+  &:focus {
+    background: map-get(map-get($btn-info, hover), bg);
+    border-color: map-get(map-get($btn-info, hover), border);
+    color: map-get(map-get($btn-info, hover), color);
+  }
+}
+
+/* Basic button */
+button,
+.btn {
+  @include btn-gen($btn);
+}
+/* Primary Button */
+.btn--primary {
+  @include btn-gen($btn-primary);
+}
+/* CTA Button */
+.btn--cta {
+  @include btn-gen($btn-cta);
+}
+/* Confirm Button */
+.btn--confirm {
+  @include btn-gen($btn-confirm);
+}
+/* Option Button */
+.btn--option {
+  @include btn-gen($btn-option);
+}
+/* Delete Button */
+.btn--delete {
+  @include btn-gen($btn-delete);
+}
