@@ -1,0 +1,116 @@
+.logo{
+  @media (#{$bp-larger-than-mobile}){left:43%;}
+  @media (#{$bp-larger-than-tablet}){left:2rem;}
+  position:absolute;
+  top:2rem;
+  max-width: 32px;
+  z-index: 999999;
+   @include fade(0.3s );
+  &:hover{
+    opacity: 0.7;
+  }
+}
+
+.main-cover{
+  background-color:black;
+  background-image:url('../images/testbg.jpg');
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  background-position:center center;
+  background-size:cover;
+  position: relative;
+  min-height: 100vh;
+  max-width: 100%;
+  h2{
+    margin-bottom: 1rem;
+    border-bottom:1px solid white;
+    padding-bottom:1rem;
+  }
+}
+
+audio{
+  width: 100%;
+}
+
+.container{
+// @include vertical-align();
+box-sizing: border-box;
+max-width: 100%;
+@media (#{$bp-larger-than-mobile}){
+  padding:8rem 0 0 0rem;
+}
+@media (#{$bp-larger-than-desktop}){
+  padding:9rem 5rem 0 5rem;
+
+}
+}
+
+.column,.columns{
+  @media (#{$bp-larger-than-mobile}){
+  padding:0 3rem;
+  }
+  @media (#{$bp-larger-than-tablet}){
+  padding:0 2rem;
+  }
+  @media (#{$bp-larger-than-desktophd}){
+  padding:0 4rem;
+  }
+  box-sizing:border-box;
+}
+
+ul{
+  margin-left: 0;
+  padding-left:0rem;
+  list-style:none;
+
+  li{
+    padding:0rem 2rem;
+    font-size: 1.5rem;
+  }
+}
+
+.packshot{
+  @media (#{$bp-larger-than-mobile}){padding:0;};
+  @media (#{$bp-larger-than-desktop}){padding:2.5rem 2.5rem 1rem 2.5rem;};
+  background-color:$black;
+  margin: 0;
+}
+.player{
+  @media (#{$bp-larger-than-mobile}){margin-bottom:2rem;};
+  @media (#{$bp-larger-than-desktop}){margin-bottom:0rem;};
+  margin-top: -5px;
+  background-color:$black;
+  padding-bottom:1rem;
+}
+
+.active a{color:white;}
+li a{color:grey;}
+li a:hover{}
+
+footer{
+  bottom:0rem;
+  padding:2rem;
+  box-sizing:border-box;
+  width:100%;
+  text-align: center;
+  background-color:$black;
+}
+
+
+.message{
+    background: #00A300;
+    display: block;
+    padding: 0.5rem;
+    text-align: center;
+    width: 100%;
+}
+/* Clearing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Self Clearing Goodness */
+.container:after,
+.row:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both; }

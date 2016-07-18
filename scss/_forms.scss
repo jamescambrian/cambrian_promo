@@ -1,0 +1,42 @@
+//test
+input,textarea{
+	width:100%; 
+	padding:0.8rem 1rem; 
+	border:none;
+	border:1px solid white;
+	background:rgba(255,255,255,0);
+	@include fade(0.3s );
+	font-size:1.5rem;
+	margin-top:0.4rem;
+	box-sizing:border-box;
+	color:$white;
+}
+input:hover, textarea:hover, 
+input:focus, textarea:focus {
+	border-color:$rail-red;
+} 
+textarea{min-height:10rem;}
+
+.button, .button__submit{
+  @media (#{$bp-larger-than-mobile}){
+    display: block;margin-bottom:3rem;}
+  @media (#{$bp-larger-than-desktop}){
+    display: inline;margin-bottom:0rem;}
+  box-sizing:border-box;
+  text-align: center;
+  width:100%;
+  background:none;
+  border:1px solid white;
+  color:white;
+  font-family:$font__sans_serif;
+  text-transform:uppercase;
+  letter-spacing:0.12rem;
+  font-size: 1.2rem;
+  padding:0.8rem 2rem;
+  cursor: pointer;
+  @include fade(0.3s );
+  &:hover{
+    background:$rail-red;
+    border-color:$rail-red;
+  }
+}

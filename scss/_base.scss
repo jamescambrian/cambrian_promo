@@ -1,0 +1,25 @@
+// BASE
+// Breakpoints
+$bp-larger-than-mobile    : "min-width: 300px";
+$bp-larger-than-phablet   : "min-width: 550px";
+$bp-larger-than-tablet    : "min-width: 750px";
+$bp-larger-than-desktop   : "min-width: 1000px";
+$bp-larger-than-desktophd : "min-width: 1200px";
+
+html {
+  font-size: 62.5%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  font-size: 1.3em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-family: $font__sans_serif;
+  color: $white; 
+  background:$background-color;
+  margin: 0;
+  padding:0;
+}
+.clearfix{
+    clear:both;
+}

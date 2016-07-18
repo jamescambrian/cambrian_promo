@@ -10,31 +10,16 @@ var rename = require('gulp-rename');
 var fileinclude = require('gulp-file-include');
 var gulpIgnore = require('gulp-ignore');
 var uglify = require('gulp-uglify');
-var bower = require('gulp-bower');
-
-var config = {
-     sassPath: './resources/sass',
-     bowerDir: './bower_components' 
-}
-
-gulp.task('bower', function() { 
-    return bower()
-         .pipe(gulp.dest(config.bowerDir)) 
-});
 
 gulp.task('sass', function() {
-  return  gulp.src('./resources/sass/style.scss')
-  .pipe(sass({
-	loadPath: [
-		 './resources/sass',
-		  config.bowerDir + '/bootstrap-sass-official/assets/stylesheets'
-	 ]
-  }))
+  return sass('./scss/main.scss', {
+    sourcemap: true
+  })
   .pipe(sourcemaps.write('./', {
     includeContent: false,
-    sourceRoot: './resources/sass'
+    sourceRoot: '/scss'
   }))
-  .pipe(gulp.dest('./public/css'))
+  .pipe(gulp.dest('./css'))
   .pipe(gulpIgnore.exclude(function(file) {
     if (file.path.indexOf('.map') !== -1) {
       return true;
@@ -46,14 +31,32 @@ gulp.task('sass', function() {
   .pipe(rename({
     extname: '.min.css'
   }))
-  .pipe(gulp.dest('./public/css'))
+  .pipe(gulp.dest('./css'))
   .on('error', function (err) {
     console.error(err.message);
   })
   .pipe(connect.reload());
 });
 
-gulp.task('default', ['sass', 'bower'], function() {
+gulp.task('scripts', function() {
+  return gulp.src([
+    'scripts/vendor/jquery*.js',
+    'scripts/vendor/*.js',
+    'scripts/plugins.js',
+    'scripts/common.js'
+  ])
+  .pipe(sourcemaps.init())
+  .pipe(concat('main.js'))
+  .pipe(gulp.dest('./js/'))
+  .pipe(uglify())
+  .pipe(rename({
+    extname: '.min.js'
+  }))
+  .pipe(sourcemaps.write())
+  .pipe(gulp.dest('./js/'))
+});
+
+gulp.task('default', ['sass', 'scripts'], function() {
   // Start a server
   connect.server({
     root: '',
@@ -61,7 +64,15 @@ gulp.task('default', ['sass', 'bower'], function() {
     livereload: true
   });
   console.log('[CONNECT] Listening on port 3000'.yellow.inverse);
+
+  console.log('[CONNECT] Watching files for live-reload'.blue);
+  watch(['./index.html', './scripts/vendor/*.js', './scripts/*.js'])
+    .pipe(connect.reload());
+
+  console.log('[CONNECT] Watching SASS files'.blue);
+  gulp.watch(['./scripts/vendor/*.js', './scripts/*.js'], ['scripts']);
   
   console.log('[CONNECT] Watching SASS files'.blue);
-  gulp.watch(config.sassPath + '/**/*.scss', ['sass']); 
+  gulp.watch('./scss/**/*.scss', ['sass']);
 });
+

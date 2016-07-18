@@ -1,0 +1,40 @@
+//TYPOGRAPHY
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: normal;
+  font-family: $font__sans_serif;
+  font-weight: bold;
+  font-size: 1.9rem;
+}
+h1 { font-size: 4.0rem; line-height: 1.2;  letter-spacing: -.1rem;}
+/* Larger than phablet */
+@media (min-width: 550px) {
+  h1 { font-size: 5.8rem; }
+}
+p {
+    margin-top: 0;
+    padding-bottom: 1rem;
+    font-family: $font__sans_serif;
+    font-weight: 400;
+    letter-spacing: 0.01rem;
+
+    @media (#{$bp-larger-than-mobile}) {font-size: 1.7rem; word-spacing: 0.15rem;@include fade(0.5s);}
+    @media (#{$bp-larger-than-desktop}) {font-size: 1.5rem; word-spacing: 0.1rem; line-height: 2.5rem; @include fade(0.5s);}
+    @media (#{$bp-larger-than-desktophd}) {font-size: 1.7rem; word-spacing: 0.15rem; line-height: 3.2rem;}
+}
+
+/* Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+  color: $white;
+  cursor: pointer;
+  text-decoration: none;
+}
+a:hover {
+}
+:focus{
+  background-color: transparent;
+  outline:none;
+}
+
